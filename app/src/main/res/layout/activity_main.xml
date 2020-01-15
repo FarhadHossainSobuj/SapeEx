@@ -24,5 +24,29 @@
 
  </TextView>
 
+<EditText
+    android:id="@+id/ET_name"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:hint="@string/name"
+    android:layout_height="wrap_content">
+
+</EditText>
+
+ <EditText
+     android:layout_margin="10dp"
+     android:hint="@string/password"
+     android:inputType="textPassword"
+     android:id="@+id/ET_password"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+
+ </EditText>
+ <Button
+     android:id="@+id/BT_save"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="@string/save"
+  ></Button>
 
 </LinearLayout>
