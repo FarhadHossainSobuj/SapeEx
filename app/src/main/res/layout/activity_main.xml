@@ -42,6 +42,14 @@
      android:layout_height="wrap_content">
 
  </EditText>
+ <EditText
+     android:id="@+id/ET_date"
+  android:layout_margin="10dp"
+      android:hint="1-1-2020"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+
+ </EditText>
  <Button
      android:id="@+id/BT_save"
      android:layout_width="match_parent"

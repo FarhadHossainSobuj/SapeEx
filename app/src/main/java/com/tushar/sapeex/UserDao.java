@@ -12,7 +12,17 @@ public interface UserDao {
     @Insert
     void insert(UserModel user);
 
+
     @Query("SELECT * FROM users")
     List<UserModel> getAll();
+
+
+    @Insert
+    void insertExpence(ExpencessModel expencess);
+
+    @Query("SELECT * FROM expence")
+    List<ExpencessModel> getExpencess();
+
+
 
 }

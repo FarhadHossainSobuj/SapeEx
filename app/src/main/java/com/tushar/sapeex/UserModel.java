@@ -16,9 +16,13 @@ public class UserModel {
     @ColumnInfo(name = "password")
     private String password;
 
+
+
+
     public UserModel(String name, String password) {
         this.name = name;
         this.password = password;
+
     }
 
     public int getId() {

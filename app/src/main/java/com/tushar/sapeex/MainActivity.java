@@ -3,6 +3,9 @@ package com.tushar.sapeex;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,12 +15,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    EditText ET_name,ET_number;
+    EditText ET_name,ET_number,ET_date;
     Button BT_save;
     List<UserModel> list;
     @Override
@@ -27,9 +32,11 @@ public class MainActivity extends AppCompatActivity {
 
         ET_name=findViewById(R.id.ET_name);
         BT_save=findViewById(R.id.BT_save);
+        ET_date=findViewById(R.id.ET_date);
 
 
-        AppDatabase db= Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"information").allowMainThreadQueries().build();
+        AppDatabase db= Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"information")
+                .allowMainThreadQueries().build();
 
         final UserDao dao=db.dao();
 
@@ -45,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),name,Toast.LENGTH_SHORT).show();
 
 
-                //Show...........
 
                 list=new ArrayList<>();
 
+
                 list=dao.getAll();
+
 
                 for(UserModel data:list){
                     Log.d("Data", data.getName());
@@ -58,9 +66,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        ET_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
     }
+
+
+
 
 
 }
