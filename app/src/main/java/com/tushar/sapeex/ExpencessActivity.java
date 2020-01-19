@@ -32,6 +32,7 @@ public class ExpencessActivity extends AppCompatActivity {
 
         AppDatabase db= Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"information")
                 .allowMainThreadQueries()
+                .addMigrations(AppDatabase.Migration2)
                 .build();
 
         final UserDao dao=db.dao();
@@ -42,15 +43,17 @@ public class ExpencessActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String type=ET_type.getText().toString();
+                String date=ET_date.getText().toString();
                 float amount=Float.valueOf(ET_ammount.getText().toString());
 
-                ExpencessModel ex1=new ExpencessModel(type,amount);
+
+                ExpencessModel ex1=new ExpencessModel(type,amount,date);
                 dao.insertExpence(ex1);
 
                 list=dao.getExpencess();
 
                 for(ExpencessModel data:list){
-                    Log.d("Data :","COst Type : "+ data.getCost_type()+"\n"+"Amount :"+String.valueOf(data.getAmmoutn()));
+                    Log.d("Data :","Cost Type : "+ data.getCost_type()+"\n"+"Amount :"+String.valueOf(data.getAmmoutn()));
                 }
 
             }

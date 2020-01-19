@@ -16,9 +16,21 @@ public class ExpencessModel {
     @ColumnInfo(name = "ammount")
     private float ammoutn;
 
-    public ExpencessModel(String cost_type, float ammoutn) {
+    @ColumnInfo(name = "date")
+    private String date;
+
+    public ExpencessModel(String cost_type, float ammoutn, String date) {
         this.cost_type = cost_type;
         this.ammoutn = ammoutn;
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public int getId() {
