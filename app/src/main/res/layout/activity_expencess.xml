@@ -33,14 +33,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ET_type" />
 
+
+    <EditText
+        android:id="@+id/ET_Date"
+        android:layout_width="277dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="88dp"
+        android:ems="10"
+        android:hint="Date"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ET_type" />
+
+
+
     <Button
         android:id="@+id/BT_savee"
         android:layout_width="216dp"
         android:layout_height="54dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="36dp"
         android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_ammount" />
+        app:layout_constraintTop_toBottomOf="@+id/ET_Date" />
 </androidx.constraintlayout.widget.ConstraintLayout>
