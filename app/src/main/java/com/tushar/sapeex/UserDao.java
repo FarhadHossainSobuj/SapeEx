@@ -23,6 +23,9 @@ public interface UserDao {
     @Query("SELECT * FROM expence")
     List<ExpencessModel> getExpencess();
 
+    @Query("SELECT * FROM users WHERE name=:name AND password=:password")
+    UserModel checkLogin(String name,String password);
+
 
 
 }
