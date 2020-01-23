@@ -34,9 +34,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         holder.tvType.setText(listExpense.get(position).getCost_type());
         holder.tvAmount.setText("" + listExpense.get(position).getAmmoutn());
         holder.tvDate.setText(listExpense.get(position).getDate());
-        if (position % 2 == 0){
-            holder.cl.setBackgroundColor(Color.parseColor("#292929"));
-        }
+
     }
 
     @Override
