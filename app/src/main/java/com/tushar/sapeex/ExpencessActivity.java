@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,7 +19,7 @@ import java.util.List;
 public class ExpencessActivity extends AppCompatActivity {
 
     private  EditText ET_type,ET_ammount,ET_date;
-    private Button BT_savee;
+    private Button BT_savee,BT_show;
     private List<ExpencessModel> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class ExpencessActivity extends AppCompatActivity {
         ET_date=findViewById(R.id.ET_Date);
 
         BT_savee=findViewById(R.id.BT_savee);
+        BT_show=findViewById(R.id.BT_show);
 
         AppDatabase db= Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"information")
                 .allowMainThreadQueries()
@@ -63,6 +65,16 @@ public class ExpencessActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dateChose();
+            }
+        });
+
+
+        BT_show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(ExpencessActivity.this,ExpeceList.class);
+                startActivity(intent);
             }
         });
     }
