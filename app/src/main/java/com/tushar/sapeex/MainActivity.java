@@ -6,6 +6,7 @@ import androidx.room.Room;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText ET_name,ET_number,ET_date;
     Button BT_save;
+    Button btnShow;
     List<UserModel> list;
+    //public static AppDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         ET_name=findViewById(R.id.ET_name);
         BT_save=findViewById(R.id.BT_save);
+        btnShow=findViewById(R.id.btnShow);
         ET_date=findViewById(R.id.ET_date);
 
 
@@ -62,6 +66,14 @@ public class MainActivity extends AppCompatActivity {
                 for(UserModel data:list){
                     Log.d("Data", data.getName());
                 }
+            }
+        });
+
+        btnShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ExpenseActivity.class);
+                startActivity(intent);
             }
         });
 
