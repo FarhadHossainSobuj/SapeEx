@@ -57,6 +57,7 @@ public class ExpencessActivity extends AppCompatActivity {
                 for(ExpencessModel data:list){
                     Log.d("Data :","Cost Type : "+ data.getCost_type()+"\n"+"Amount :"+String.valueOf(data.getAmmoutn()));
                 }
+                //hi
 
             }
         });
